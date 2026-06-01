@@ -3,7 +3,7 @@
     <div id="heroBanner" class="carousel slide mb-4" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button
-          v-for="(slide, index) in slides"
+          v-for="(slide, index) in normalizedSlides"
           :key="slide.image"
           type="button"
           data-bs-target="#heroBanner"
@@ -15,7 +15,7 @@
       </div>
 
       <div class="carousel-inner rounded overflow-hidden">
-        <div v-for="(slide, index) in slides" :key="slide.image" class="carousel-item" :class="{ active: index === 0 }">
+        <div v-for="(slide, index) in normalizedSlides" :key="slide.image" class="carousel-item" :class="{ active: index === 0 }">
           <img :src="slide.image" :alt="slide.alt" class="d-block w-100 hero-image" />
           <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
             <h5 class="mb-1">{{ slide.title }}</h5>
@@ -89,6 +89,14 @@ import { computed } from 'vue'
 import homeSections from '../data/bo-cuc/muc-trang-chu.json'
 import slides from '../data/bo-cuc/trinh-chieu.json'
 import { approvedPosts } from '../stores/posts'
+import { resolveAppPath } from '../utils/paths'
+
+const normalizedSlides = computed(() =>
+  slides.map((slide) => ({
+    ...slide,
+    image: resolveAppPath(slide.image),
+  }))
+)
 
 const findPost = (postId) => approvedPosts.value.find((post) => String(post.id) === String(postId))
 

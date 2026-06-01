@@ -1,5 +1,6 @@
 import { computed, ref } from 'vue'
 import { apiRequest } from './api'
+import { resolveAppPath } from '../utils/paths'
 
 const AUTH_KEY = 'asm_auth_user'
 const readSavedUser = () => {
@@ -21,6 +22,11 @@ const usersLoaded = ref(false)
 
 export const users = ref([])
 export const currentUser = ref(readSavedUser())
+
+const normalizeUser = (user) => ({
+  ...user,
+  avatar: resolveAppPath(user?.avatar),
+})
 
 export const isLoggedIn = computed(() => currentUser.value !== null)
 export const isModerator = computed(() => currentUser.value?.role === 'moderator')
@@ -50,7 +56,7 @@ const buildNextUserId = () => {
 export const loadUsers = async () => {
   try {
     const remoteUsers = await apiRequest('/users')
-    users.value = Array.isArray(remoteUsers) ? remoteUsers : []
+    users.value = Array.isArray(remoteUsers) ? remoteUsers.map(normalizeUser) : []
 
     if (currentUser.value) {
       const freshCurrentUser = users.value.find((item) => item.id === currentUser.value.id)
@@ -111,8 +117,9 @@ export const register = async (payload) => {
       body: JSON.stringify(user),
     })
 
-    users.value.push(created)
-    setCurrentUserSession(created)
+    const normalizedCreated = normalizeUser(created)
+    users.value.push(normalizedCreated)
+    setCurrentUserSession(normalizedCreated)
     return { ok: true }
   } catch {
     return { ok: false, message: 'Không thể tạo người dùng. Vui lòng kiểm tra JSON Server.' }
@@ -146,8 +153,9 @@ export const updateProfile = async (payload) => {
       body: JSON.stringify(updated),
     })
 
-    users.value[index] = remoteUpdated
-    setCurrentUserSession(remoteUpdated)
+    const normalizedUpdated = normalizeUser(remoteUpdated)
+    users.value[index] = normalizedUpdated
+    setCurrentUserSession(normalizedUpdated)
     return { ok: true }
   } catch {
     return { ok: false, message: 'Không thể cập nhật hồ sơ. Vui lòng thử lại.' }
@@ -187,9 +195,10 @@ export const updateUser = async (id, payload, updatedBy) => {
       body: JSON.stringify(updated),
     })
 
-    users.value[index] = remoteUpdated
-    if (currentUser.value?.id === remoteUpdated.id) {
-      setCurrentUserSession(remoteUpdated)
+    const normalizedUpdated = normalizeUser(remoteUpdated)
+    users.value[index] = normalizedUpdated
+    if (currentUser.value?.id === normalizedUpdated.id) {
+      setCurrentUserSession(normalizedUpdated)
     }
 
     return { ok: true }

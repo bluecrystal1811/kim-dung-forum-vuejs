@@ -1,9 +1,15 @@
 import { computed, ref } from 'vue'
 import { apiRequest } from './api'
+import { resolveAppPath } from '../utils/paths'
 
 const postsLoaded = ref(false)
 
 export const posts = ref([])
+
+const normalizePost = (post) => ({
+  ...post,
+  image: resolveAppPath(post?.image),
+})
 
 export const approvedPosts = computed(() => posts.value.filter((item) => item.status === 'Đã duyệt'))
 
@@ -12,7 +18,7 @@ export const getPostById = (id) => posts.value.find((item) => String(item.id) ==
 export const loadPosts = async () => {
   try {
     const remotePosts = await apiRequest('/posts')
-    posts.value = Array.isArray(remotePosts) ? remotePosts : []
+    posts.value = Array.isArray(remotePosts) ? remotePosts.map(normalizePost) : []
     postsLoaded.value = true
     return { ok: true }
   } catch {
@@ -52,7 +58,7 @@ export const addPost = async (payload, currentUser) => {
       body: JSON.stringify(newPost),
     })
 
-    posts.value.unshift(created)
+    posts.value.unshift(normalizePost(created))
     return { ok: true }
   } catch {
     return { ok: false, message: 'Không thể tạo bài viết. Vui lòng kiểm tra JSON Server.' }
@@ -82,7 +88,7 @@ export const updatePost = async (id, payload, updatedBy) => {
       body: JSON.stringify(updated),
     })
 
-    posts.value[index] = remoteUpdated
+    posts.value[index] = normalizePost(remoteUpdated)
     return { ok: true }
   } catch {
     return { ok: false, message: 'Không thể cập nhật bài viết.' }
@@ -125,7 +131,7 @@ export const approvePost = async (id, approvedBy) => {
       body: JSON.stringify(updated),
     })
 
-    posts.value[index] = remoteUpdated
+    posts.value[index] = normalizePost(remoteUpdated)
     return { ok: true }
   } catch {
     return { ok: false, message: 'Không thể duyệt bài viết.' }
