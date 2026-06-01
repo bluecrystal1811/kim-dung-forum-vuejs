@@ -1,5 +1,6 @@
 import { computed, ref } from 'vue'
 import { apiRequest } from './api'
+import { loadMockCollection } from './mockDb'
 import { resolveAppPath } from '../utils/paths'
 
 const AUTH_KEY = 'asm_auth_user'
@@ -66,9 +67,22 @@ export const loadUsers = async () => {
     usersLoaded.value = true
     return { ok: true }
   } catch {
-    users.value = []
-    usersLoaded.value = true
-    return { ok: false, message: 'Không thể kết nối JSON Server.' }
+    try {
+      const fallbackUsers = await loadMockCollection('users')
+      users.value = fallbackUsers.map(normalizeUser)
+
+      if (currentUser.value) {
+        const freshCurrentUser = users.value.find((item) => item.id === currentUser.value.id)
+        setCurrentUserSession(freshCurrentUser || null)
+      }
+
+      usersLoaded.value = true
+      return { ok: true, fallback: true }
+    } catch {
+      users.value = []
+      usersLoaded.value = true
+      return { ok: false, message: 'Không thể kết nối JSON Server.' }
+    }
   }
 }
 

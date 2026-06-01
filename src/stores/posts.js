@@ -1,5 +1,6 @@
 import { computed, ref } from 'vue'
 import { apiRequest } from './api'
+import { loadMockCollection } from './mockDb'
 import { resolveAppPath } from '../utils/paths'
 
 const postsLoaded = ref(false)
@@ -22,9 +23,16 @@ export const loadPosts = async () => {
     postsLoaded.value = true
     return { ok: true }
   } catch {
-    posts.value = []
-    postsLoaded.value = true
-    return { ok: false, message: 'Không thể kết nối JSON Server.' }
+    try {
+      const fallbackPosts = await loadMockCollection('posts')
+      posts.value = fallbackPosts.map(normalizePost)
+      postsLoaded.value = true
+      return { ok: true, fallback: true }
+    } catch {
+      posts.value = []
+      postsLoaded.value = true
+      return { ok: false, message: 'Không thể kết nối JSON Server.' }
+    }
   }
 }
 

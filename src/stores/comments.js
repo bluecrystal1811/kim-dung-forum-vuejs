@@ -1,5 +1,6 @@
 import { computed, ref } from 'vue'
 import { apiRequest } from './api'
+import { loadMockCollection } from './mockDb'
 
 const commentsLoaded = ref(false)
 
@@ -12,9 +13,16 @@ export const loadComments = async () => {
     commentsLoaded.value = true
     return { ok: true }
   } catch {
-    comments.value = []
-    commentsLoaded.value = true
-    return { ok: false, message: 'Không thể kết nối JSON Server.' }
+    try {
+      const fallbackComments = await loadMockCollection('comments')
+      comments.value = fallbackComments
+      commentsLoaded.value = true
+      return { ok: true, fallback: true }
+    } catch {
+      comments.value = []
+      commentsLoaded.value = true
+      return { ok: false, message: 'Không thể kết nối JSON Server.' }
+    }
   }
 }
 
