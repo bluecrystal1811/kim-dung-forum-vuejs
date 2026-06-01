@@ -1,0 +1,25 @@
+{
+  "name": "asm",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"npm:api\" \"npm:client\"",
+    "client": "vite",
+    "api": "json-server --watch db.json --host 127.0.0.1 --port 3000",
+    "start": "npm run dev",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "vue": "^3.5.32",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.5",
+    "concurrently": "^9.2.1",
+    "json-server": "^0.17.4",
+    "vite": "^8.0.4"
+  }
+}

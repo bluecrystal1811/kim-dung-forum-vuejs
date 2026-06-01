@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "authorPrefix": "Đăng bởi",
+    "separator": "|"
+  },
+  "commentForm": {
+    "title": "Bình luận bài viết",
+    "placeholder": "Chia sẻ cảm nhận của bạn",
+    "submitLabel": "Gửi bình luận",
+    "emptyError": "Vui lòng nhập nội dung bình luận.",
+    "successMessage": "Đã gửi bình luận (demo)."
+  },
+  "commentList": {
+    "title": "Danh sách bình luận"
+  },
+  "notFoundMessage": "Không tìm thấy bài viết."
+}

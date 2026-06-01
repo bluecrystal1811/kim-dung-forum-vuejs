@@ -1,0 +1,16 @@
+{
+  "pageTitle": "Tất cả bài viết",
+  "allCategoryLabel": "Tất cả",
+  "factions": {
+    "title": "Môn phái",
+    "items": ["Toàn Chân Giáo", "Cái Bang", "Minh Giáo", "Thiếu Lâm", "Võ Đang"]
+  },
+  "popularPosts": {
+    "title": "Bài xem nhiều",
+    "items": [
+      { "postId": 3, "label": "Kiều Phong: anh hùng cô độc" },
+      { "postId": 4, "label": "Lệnh Hồ Xung và triết lý tự do" },
+      { "postId": 5, "label": "Vì sao Cửu Âm Chân Kinh được săn lùng?" }
+    ]
+  }
+}

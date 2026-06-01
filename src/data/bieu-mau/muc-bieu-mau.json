@@ -1,0 +1,78 @@
+{
+  "login": {
+    "title": "Đăng nhập",
+    "successLoggedIn": "Bạn đang ở trạng thái đã đăng nhập.",
+    "emailLabel": "Email",
+    "passwordLabel": "Mật khẩu",
+    "submitLabel": "Đăng nhập",
+    "registerLinkLabel": "Tạo tài khoản mới",
+    "errors": {
+      "required": "Vui lòng nhập đầy đủ email và mật khẩu.",
+      "invalidEmail": "Email không đúng định dạng."
+    }
+  },
+  "register": {
+    "title": "Đăng ký tài khoản",
+    "fullNameLabel": "Họ và tên",
+    "penNameLabel": "Bút danh",
+    "emailLabel": "Email",
+    "passwordLabel": "Mật khẩu",
+    "confirmPasswordLabel": "Xác nhận mật khẩu",
+    "submitLabel": "Đăng ký",
+    "errors": {
+      "required": "Vui lòng nhập đầy đủ thông tin.",
+      "invalidEmail": "Email không đúng định dạng.",
+      "passwordLength": "Mật khẩu phải có ít nhất 6 ký tự.",
+      "confirmRequired": "Vui lòng nhập xác nhận mật khẩu.",
+      "passwordMismatch": "Xác nhận mật khẩu không khớp."
+    }
+  },
+  "createPost": {
+    "title": "Tạo bài viết mới",
+    "titleLabel": "Tiêu đề bài viết",
+    "categoryLabel": "Chuyên mục",
+    "excerptLabel": "Tóm tắt ngắn",
+    "imageLabel": "URL hình ảnh (tùy chọn)",
+    "imagePlaceholder": "/images/banner4.jpg",
+    "contentLabel": "Nội dung",
+    "submitLabel": "Đăng bài",
+    "messages": {
+      "success": "Đăng bài thành công, bài viết đang ở trạng thái chờ duyệt.",
+      "titleRequired": "Vui lòng nhập tiêu đề bài viết.",
+      "excerptRequired": "Vui lòng nhập tóm tắt ngắn.",
+      "contentRequired": "Vui lòng nhập nội dung bài viết.",
+      "loginRequired": "Bạn cần đăng nhập để đăng bài."
+    }
+  },
+  "editPost": {
+    "title": "Chỉnh sửa bài viết",
+    "titleLabel": "Tiêu đề bài viết",
+    "categoryLabel": "Chuyên mục",
+    "excerptLabel": "Tóm tắt ngắn",
+    "imageLabel": "URL hình ảnh (tùy chọn)",
+    "imagePlaceholder": "/images/banner4.jpg",
+    "contentLabel": "Nội dung",
+    "submitLabel": "Cập nhật bài viết",
+    "messages": {
+      "success": "Cập nhật bài viết thành công. Bài viết đã quay lại trạng thái chờ duyệt.",
+      "titleRequired": "Vui lòng nhập tiêu đề bài viết.",
+      "excerptRequired": "Vui lòng nhập tóm tắt ngắn.",
+      "contentRequired": "Vui lòng nhập nội dung bài viết.",
+      "notFound": "Không tìm thấy bài viết cần chỉnh sửa.",
+      "forbidden": "Bạn không có quyền chỉnh sửa bài viết này."
+    }
+  },
+  "profile": {
+    "memberSincePrefix": "Thành viên từ",
+    "title": "Cập nhật thông tin cá nhân",
+    "fullNameLabel": "Họ và tên",
+    "penNameLabel": "Bút danh",
+    "emailLabel": "Email",
+    "submitLabel": "Lưu thay đổi",
+    "messages": {
+      "required": "Vui lòng nhập đầy đủ thông tin cá nhân.",
+      "invalidEmail": "Email không đúng định dạng.",
+      "success": "Cập nhật thông tin thành công."
+    }
+  }
+}

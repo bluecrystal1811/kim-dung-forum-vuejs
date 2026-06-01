@@ -1,0 +1,16 @@
+{
+  "featuredPostIds": [1, 2],
+  "recentlyViewed": {
+    "title": "Bài viết vừa xem",
+    "items": [
+      { "postId": 1, "viewedText": "5 phút trước" },
+      { "postId": 2, "viewedText": "20 phút trước" },
+      { "postId": 3, "viewedText": "1 giờ trước" },
+      { "postId": 5, "viewedText": "hôm qua" }
+    ]
+  },
+  "continueReading": {
+    "title": "Tiếp tục đọc",
+    "postIds": [4, 6, 5]
+  }
+}

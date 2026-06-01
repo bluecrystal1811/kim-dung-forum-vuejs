@@ -1,0 +1,21 @@
+{
+  "brand": "Hiệp Khách Kim Dung",
+  "navItems": [
+    { "label": "Trang chủ", "to": "/" },
+    { "label": "Bài viết", "to": "/bai-viet" },
+    { "label": "Đăng bài", "to": "/tao-bai-viet" },
+    { "label": "Quản lý bài", "to": "/quan-ly-bai-viet" },
+    { "label": "Trang cá nhân", "to": "/trang-ca-nhan" },
+    { "label": "Người dùng", "to": "/quan-ly-nguoi-dung", "requiresModerator": true },
+    { "label": "Danh mục", "to": "/quan-ly-danh-muc", "requiresModerator": true }
+  ],
+  "guestActions": {
+    "loginLabel": "Đăng nhập",
+    "registerLabel": "Đăng ký"
+  },
+  "userActions": {
+    "greetingPrefix": "Xin chào",
+    "logoutLabel": "Đăng xuất"
+  },
+  "footer": "@2024 Hiệp Khách Kim Dung"
+}

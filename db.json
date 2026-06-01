@@ -1,0 +1,204 @@
+{
+  "users": [
+    {
+      "id": "u01",
+      "fullName": "Do Minh Khoi",
+      "penName": "KiemKhachPS46986",
+      "email": "ps46986@fpt.edu.vn",
+      "password": "123456",
+      "role": "moderator",
+      "joinedYear": 2026,
+      "badge": "Fan Kim Dung",
+      "avatar": "/images/avatar.png"
+    },
+    {
+      "id": "u02",
+      "fullName": "Tran Thu Ha",
+      "penName": "DocGiaVoLam",
+      "email": "ha.tran@example.com",
+      "password": "123456",
+      "role": "author",
+      "joinedYear": 2025,
+      "badge": "Bình luận tích cực",
+      "avatar": "/images/avatar.png"
+    },
+    {
+      "id": "u03",
+      "fullName": "abc",
+      "penName": "abc",
+      "email": "abc@gmail.com",
+      "password": "123456",
+      "role": "author",
+      "joinedYear": 2026,
+      "badge": "Thành viên mới",
+      "avatar": "/images/avatar.png"
+    },
+    {
+      "id": "u04",
+      "fullName": "def",
+      "penName": "def",
+      "email": "def@gmail.com",
+      "password": "123456",
+      "role": "author",
+      "joinedYear": 2026,
+      "badge": "Thành viên mới",
+      "avatar": "/images/avatar.png"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "title": "Quách Tĩnh và đạo nghĩa giang hồ",
+      "excerpt": "Phân tích cách Quách Tĩnh giữ vững chính đạo giữa thời loạn Tống - Mông.",
+      "content": "Phân tích cách Quách Tĩnh giữ vững chính đạo giữa thời loạn Tống - Mông.",
+      "category": "Nhân vật",
+      "image": "/images/quachtinh.jpg",
+      "authorId": "u01",
+      "authorName": "KiemKhachPS46986",
+      "createdAt": "2026-03-18",
+      "status": "Đã duyệt"
+    },
+    {
+      "id": "2",
+      "title": "Dương Quá: kẻ ngông hay bậc đại hiệp?",
+      "excerpt": "Một góc nhìn khác về hành trình trưởng thành của Thần Điêu Đại Hiệp.",
+      "content": "Một góc nhìn khác về hành trình trưởng thành của Thần Điêu Đại Hiệp.",
+      "category": "Nhân vật",
+      "image": "/images/duongqua.jpg",
+      "authorId": "u01",
+      "authorName": "KiemKhachPS46986",
+      "createdAt": "2026-03-19",
+      "status": "Đã duyệt"
+    },
+    {
+      "id": "3",
+      "title": "Kiều Phong và bi kịch của người anh hùng không quê hương",
+      "excerpt": "Kiều Phong trong Thiên Long Bát Bộ là hình tượng anh hùng bi tráng bậc nhất của Kim Dung.",
+      "content": "Kiều Phong trong Thiên Long Bát Bộ là hình tượng anh hùng bi tráng bậc nhất của Kim Dung. Tài năng võ học tuyệt đỉnh, nghĩa khí ngút trời, nhưng số phận lại đẩy ông vào thế đối đầu với cả hai phía Tống - Liêu.\n\nKhi biết được thân thế thật sự, Kiều Phong không chọn chạy trốn trách nhiệm. Ông vẫn đứng ra bảo vệ bách tính, ngăn chiến tranh nổ ra, chấp nhận hi sinh danh tiếng và sinh mệnh để đổi lấy thái bình cho thiên hạ.\n\nTinh thần đại hiệp của Kiều Phong nằm ở chữ \"nghĩa\" cao hơn mọi ràng buộc cá nhân, khiến nhân vật này luôn sống mãi trong lòng người đọc yêu truyện kiếm hiệp.",
+      "category": "Nhân vật",
+      "image": "/images/kieuphong.jpg",
+      "authorId": "u01",
+      "authorName": "KiemKhachPS46986",
+      "createdAt": "2026-03-26",
+      "status": "Đã duyệt"
+    },
+    {
+      "id": "4",
+      "title": "Lệnh Hồ Xung: đời kiếm khách phóng khoáng",
+      "excerpt": "Nhân vật tiêu biểu cho tinh thần phá bỏ khuôn mẫu trong Tiếu Ngạo Giang Hồ.",
+      "content": "Nhân vật tiêu biểu cho tinh thần phá bỏ khuôn mẫu trong Tiếu Ngạo Giang Hồ.",
+      "category": "Nhân vật",
+      "image": "/images/lenhhoxung.jpg",
+      "authorId": "u02",
+      "authorName": "DocGiaVoLam",
+      "createdAt": "2026-03-22",
+      "status": "Đã duyệt"
+    },
+    {
+      "id": "5",
+      "title": "Cửu Âm Chân Kinh và cuộc tranh đoạt",
+      "excerpt": "Từ Hoa Sơn luận kiếm đến những bi kịch đằng sau một bộ bí kíp võ học.",
+      "content": "Từ Hoa Sơn luận kiếm đến những bi kịch đằng sau một bộ bí kíp võ học.",
+      "category": "Bí kíp võ công",
+      "image": "/images/cuuamchankinh.jpg",
+      "authorId": "u02",
+      "authorName": "DocGiaVoLam",
+      "createdAt": "2026-03-23",
+      "status": "Đã duyệt"
+    },
+    {
+      "id": "6",
+      "title": "Tình yêu Dương Quá - Tiểu Long Nữ",
+      "excerpt": "Mối tình vượt qua lễ giáo, trở thành biểu tượng bất hủ trong lòng độc giả.",
+      "content": "Mối tình vượt qua lễ giáo, trở thành biểu tượng bất hủ trong lòng độc giả.",
+      "category": "Cảm nhận truyện",
+      "image": "/images/duongquatieulongnu.jpg",
+      "authorId": "u01",
+      "authorName": "KiemKhachPS46986",
+      "createdAt": "2026-03-25",
+      "status": "Đã duyệt"
+    },
+    {
+      "id": 7,
+      "title": "abc",
+      "excerpt": "abc",
+      "content": "abc",
+      "category": "Nhân vật",
+      "image": "/images/banner4.jpg",
+      "authorId": "u01",
+      "authorName": "KiemKhachPS46986",
+      "createdAt": "2026-04-14",
+      "status": "Đã duyệt"
+    },
+    {
+      "id": 8,
+      "title": "abc",
+      "excerpt": "abc",
+      "content": "abccass",
+      "category": "Toàn Chân Giáo",
+      "image": "/images/banner4.jpg",
+      "authorId": "u01",
+      "authorName": "KiemKhachPS46986",
+      "createdAt": "2026-04-16",
+      "status": "Đã duyệt"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "postId": 3,
+      "author": "DocGiaVoLam",
+      "content": "Bài phân tích rất sâu, mình cực thích đoạn nói về chữ nghĩa của Kiều Phong.",
+      "createdAt": "10:20 - 26/03/2026"
+    },
+    {
+      "id": "2",
+      "postId": 3,
+      "author": "CoMoNu",
+      "content": "Đọc xong lại muốn xem lại bản phim 2003 ngay lập tức.",
+      "createdAt": "11:15 - 26/03/2026"
+    },
+    {
+      "id": "3",
+      "postId": 3,
+      "author": "BangChuCaiBang",
+      "content": "Mong có thêm bài về Hư Trúc và Đoàn Dự nữa.",
+      "createdAt": "12:45 - 26/03/2026"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Toàn Chân Giáo"
+    },
+    {
+      "id": "2",
+      "name": "Cái Bang"
+    },
+    {
+      "id": "3",
+      "name": "Minh Giáo"
+    },
+    {
+      "id": "4",
+      "name": "Thiếu Lâm"
+    },
+    {
+      "id": "5",
+      "name": "Võ Đang"
+    },
+    {
+      "id": "6",
+      "name": "Nhân vật"
+    },
+    {
+      "id": "7",
+      "name": "Bí kíp võ công"
+    },
+    {
+      "id": "8",
+      "name": "Cảm nhận truyện"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

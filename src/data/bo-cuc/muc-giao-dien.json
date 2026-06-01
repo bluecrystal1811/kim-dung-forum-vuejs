@@ -1,0 +1,69 @@
+{
+  "managePosts": {
+    "title": "Bài viết của tôi",
+    "moderatorTitle": "Kiểm duyệt bài viết",
+    "addButtonLabel": "Thêm bài viết",
+    "tableHeaders": ["#", "Tiêu đề", "Chuyên mục", "Ngày đăng", "Trạng thái", "Thao tác"],
+    "viewButtonLabel": "Xem",
+    "editButtonLabel": "Sửa",
+    "approveButtonLabel": "Duyệt",
+    "deleteButtonLabel": "Xóa",
+    "emptyMessage": "Bạn chưa có bài viết nào.",
+    "deleteConfirmMessage": "Bạn chắc chắn muốn xóa bài viết này?",
+    "approveSuccessMessage": "Đã duyệt bài viết thành công."
+  },
+  "manageUsers": {
+    "title": "Quản lý người dùng",
+    "tableHeaders": ["#", "Bút danh", "Email", "Vai trò", "Huy hiệu", "Thao tác"],
+    "editButtonLabel": "Sửa",
+    "deleteButtonLabel": "Xóa",
+    "emptyMessage": "Chưa có người dùng nào.",
+    "deleteConfirmMessage": "Bạn chắc chắn muốn xóa người dùng này?",
+    "formTitle": "Cập nhật người dùng",
+    "fullNameLabel": "Họ và tên",
+    "penNameLabel": "Bút danh",
+    "badgeLabel": "Huy hiệu",
+    "roleLabel": "Vai trò",
+    "saveButtonLabel": "Lưu thay đổi",
+    "cancelButtonLabel": "Hủy",
+    "successMessage": "Cập nhật người dùng thành công.",
+    "deleteSuccessMessage": "Đã xóa người dùng thành công.",
+    "requiredMessage": "Vui lòng nhập đầy đủ thông tin người dùng.",
+    "invalidEmailMessage": "Email không đúng định dạng."
+  },
+  "manageCategories": {
+    "title": "Quản lý danh mục",
+    "addTitle": "Thêm danh mục mới",
+    "nameLabel": "Tên danh mục",
+    "addButtonLabel": "Thêm danh mục",
+    "tableHeaders": ["#", "Tên danh mục", "Thao tác"],
+    "editButtonLabel": "Sửa",
+    "deleteButtonLabel": "Xóa",
+    "emptyMessage": "Chưa có danh mục nào.",
+    "deleteConfirmMessage": "Bạn chắc chắn muốn xóa danh mục này?",
+    "editTitle": "Cập nhật danh mục",
+    "saveButtonLabel": "Lưu danh mục",
+    "cancelButtonLabel": "Hủy",
+    "addSuccessMessage": "Đã thêm danh mục thành công.",
+    "updateSuccessMessage": "Đã cập nhật danh mục thành công.",
+    "deleteSuccessMessage": "Đã xóa danh mục thành công."
+  },
+  "notFound": {
+    "title": "404 - Không tìm thấy trang",
+    "backHomeLabel": "Về trang chủ"
+  },
+  "routeTitles": {
+    "home": "Trang chủ",
+    "posts": "Danh sách bài viết",
+    "post-detail": "Chi tiết bài viết",
+    "login": "Đăng nhập",
+    "register": "Đăng ký",
+    "create-post": "Tạo bài viết",
+    "edit-post": "Chỉnh sửa bài viết",
+    "manage-posts": "Quản lý bài viết",
+    "manage-users": "Quản lý người dùng",
+    "manage-categories": "Quản lý danh mục",
+    "profile": "Trang cá nhân",
+    "not-found": "Không tìm thấy trang"
+  }
+}

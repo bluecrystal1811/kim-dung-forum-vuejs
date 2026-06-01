@@ -1,0 +1,41 @@
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.app-shell .nav-link.router-link-exact-active {
+  font-weight: 600;
+  color: #dc3545;
+}
+
+.post-image {
+  height: 220px;
+  object-fit: cover;
+}
+
+.hero-image {
+  height: 420px;
+  object-fit: cover;
+}
+
+.profile-avatar {
+  max-height: 320px;
+  object-fit: cover;
+}
+
+.filter-select {
+  width: 240px;
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    height: 240px;
+  }
+
+  .filter-select {
+    width: 100%;
+  }
+}
