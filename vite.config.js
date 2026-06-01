@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/kim-dung-forum-vuejs/',
   plugins: [vue()],
   server: {
     proxy: {

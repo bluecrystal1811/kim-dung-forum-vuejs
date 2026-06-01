@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import PostList from '../views/PostList.vue'
 import PostDetail from '../views/PostDetail.vue'
@@ -16,7 +16,7 @@ import uiSections from '../data/bo-cuc/muc-giao-dien.json'
 import { isLoggedIn, isModerator } from '../stores/auth'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     { path: '/', name: 'home', component: Home },
     { path: '/bai-viet', name: 'posts', component: PostList },
