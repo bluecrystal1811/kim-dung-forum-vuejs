@@ -87,7 +87,6 @@ export const updatePost = async (id, payload, updatedBy) => {
   const updated = {
     ...currentPost,
     ...payload,
-    status: 'Chờ duyệt',
   }
 
   try {

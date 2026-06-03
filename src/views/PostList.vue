@@ -3,9 +3,28 @@
     <div class="row g-3">
       <aside class="col-lg-4">
         <div class="card mb-3">
-          <div class="card-header bg-dark text-white">{{ pageSections.factions.title }}</div>
+          <div class="card-header bg-dark text-white">Danh mục</div>
           <ul class="list-group list-group-flush">
-            <li v-for="faction in pageSections.factions.items" :key="faction" class="list-group-item">{{ faction }}</li>
+            <li
+              class="list-group-item list-group-item-action"
+              :class="{ active: selectedCategory === ALL_LABEL }"
+              style="cursor: pointer;"
+              @click="selectedCategory = ALL_LABEL"
+            >
+              Tất cả
+              <span class="badge bg-secondary float-end">{{ approvedPosts.length }}</span>
+            </li>
+            <li
+              v-for="cat in categoryNames"
+              :key="cat"
+              class="list-group-item list-group-item-action"
+              :class="{ active: selectedCategory === cat }"
+              style="cursor: pointer;"
+              @click="selectedCategory = cat"
+            >
+              {{ cat }}
+              <span class="badge bg-secondary float-end">{{ countByCategory(cat) }}</span>
+            </li>
           </ul>
         </div>
 
@@ -25,11 +44,11 @@
       </aside>
 
       <div class="col-lg-8">
-        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
-          <h1 class="h4 text-danger mb-0">{{ pageSections.pageTitle }}</h1>
-          <select v-model="selectedCategory" class="form-select filter-select">
-            <option v-for="category in categoriesWithAll" :key="category" :value="category">{{ category }}</option>
-          </select>
+        <div class="d-flex align-items-center mb-3">
+          <h1 class="h4 text-danger mb-0">
+            {{ selectedCategory === ALL_LABEL ? pageSections.pageTitle : selectedCategory }}
+          </h1>
+          <span class="ms-2 text-muted small">({{ filteredPosts.length }} bài)</span>
         </div>
 
         <div class="row row-cols-1 row-cols-md-2 g-3">
@@ -58,13 +77,14 @@ import pageSections from '../data/bo-cuc/muc-danh-sach-bai-viet.json'
 import { categoryNames, ensureCategoriesLoaded } from '../stores/categories'
 import { approvedPosts } from '../stores/posts'
 
-const selectedCategory = ref(pageSections.allCategoryLabel)
+const ALL_LABEL = 'Tất cả'
+const selectedCategory = ref(ALL_LABEL)
 
 const findPost = (postId) => approvedPosts.value.find((post) => String(post.id) === String(postId))
 
 void ensureCategoriesLoaded()
 
-const categoriesWithAll = computed(() => [pageSections.allCategoryLabel, ...categoryNames.value])
+const countByCategory = (cat) => approvedPosts.value.filter((p) => p.category === cat).length
 
 const popularPosts = computed(() =>
   pageSections.popularPosts.items
@@ -76,7 +96,7 @@ const popularPosts = computed(() =>
 )
 
 const filteredPosts = computed(() => {
-  if (selectedCategory.value === pageSections.allCategoryLabel) return approvedPosts.value
+  if (selectedCategory.value === ALL_LABEL) return approvedPosts.value
   return approvedPosts.value.filter((item) => item.category === selectedCategory.value)
 })
 </script>

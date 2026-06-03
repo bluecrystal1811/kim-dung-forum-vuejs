@@ -71,7 +71,7 @@ const visiblePosts = computed(() => {
 const pageTitle = computed(() => (isModerator.value ? uiSections.managePosts.moderatorTitle : uiSections.managePosts.title))
 
 const canEdit = (post) => post.authorId === currentUser.value?.id || isModerator.value
-const canDelete = (post) => post.authorId === currentUser.value?.id
+const canDelete = (post) => currentUser.value?.role === 'moderator' || post.authorId === currentUser.value?.id
 
 const approve = async (id) => {
   actionMessage.value = ''
